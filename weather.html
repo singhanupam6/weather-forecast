@@ -5,26 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Weather app</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="weather.js"></script>
 </head>
 <body>
-  <div class="app-wrap">
+  <div id="w" class="app-wrap">
+    <div id="error"></div>
+    <div class="heading">
+      <h1 id="heading">Weather Forecast</h1>
+    </div>
     <header>
-      <input type="text" autocomplete="on" class="search-box" 
-      placeholder="Search for a city..." />
+      <input type="text" autocomplete="on" id="search-box" class="search-box" 
+      placeholder="City name" /><br><br>
+      <button onclick="city()"> get report</button>
     </header>
     <main>
       <section class="location">
-        <div class="city"></div>
-        <div class="date"></div>
+        <div class="city" id="city"></div>
+        <div class="date" id="date"></div>
       </section>
       <div class="current">
-        <div class="temp"><span>°c</span></div>
-        <div class="weather"></div>
-        <div class="hi-low">°c / °c</div>
+        <div class="temp" id="temp"><span>°c</span></div><br><br>
+        <div class="weather" id="weather"></div>
+        <div class="hi-low" id="hi-low">°c / °c</div>
       </div>
     </main>
   </div>
-  <script src="main.js"></script>
+  <script src="style.css"></script>
 </body>
 </html>
